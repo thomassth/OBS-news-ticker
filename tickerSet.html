@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Set the ticker!</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+        <h1>One line = One ticker!</h1>
+        <div class="container1">
+        <textarea id="input"></textarea>
+        <a onclick="tickerSet()">
+            <div class="button">
+                Save Text to ticker
+            </div>
+        </a>
+        <a href="ticker.html">
+            <div class="button">
+                Ticker
+            </div>
+        </a>
+
+    </div>
+    <script>
+        tickerSet = function(){
+            console.log("running");
+            var area = document.getElementById("input");             
+            var lines = area.value.replace(/\r\n/g,"\n").split("\n");
+            console.log(lines);
+        }
+
+    </script>
+    </body>
+</html>
