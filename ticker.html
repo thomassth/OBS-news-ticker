@@ -4,7 +4,7 @@
         <!-- <meta http-equiv="refresh" content="10"> -->
         <link rel="stylesheet" href="ticker.css">
     </head>
-    <body>
+    <body onload="startLoad();">
         <div id="tickerContainer">
             <div id="tickerHeader">
                 <div id="tickerHeaderText">
@@ -16,17 +16,50 @@
                 <!-- <image id="twitchLogo" src="images\twitchLogo.png"> -->
                 <div class="tickerContentText" id="outContent">
                     <span>
-                        Electrical failure at train station<br>
-                        Train runs every 15 minutes
+
                     </span>
                 </div>
                 <div class="tickerContentText" id="inContent">
                     <span>
-                        Long line at stations expected<br>
-                        Consider alternative routes
+
                     </span>
+                </div>
+                <div class="tickerContentText" id="Constant">
+
                 </div>
             </div>
         </div>
+        <div id="test">
+        </div>
+        <script>
+            getArray = JSON.parse(localStorage.passArray);
+            var arrayLength = getArray.length;
+            var i=0;
+            everyChange = function(i){
+                let x = i;
+                // setTimeout(function() { 
+                //     console.log("move"+x);
+                //     document.getElementById("outContent").id = "outContentNow";
+                //     document.getElementById("inContent").id = "inContentNow";
+                //     document.getElementById("Constant").innerHTML = getArray[x+1];
+                //     setTimeout(function(){
+                //         console.log("stop" + x);
+                //         document.getElementById("outContentNow").innerHTML = getArray[x+1];
+                //         document.getElementById("outContentNow").id = "outContent";
+                //         document.getElementById("inContentNow").id = "inContent";
+                //         document.getElementById("inContent").innerHTML = getArray[x+2];
+                //     },2000);
+                // }, 2000);
+                console.log(x);
+                i=i+1;
+            }
+            startLoad = function(){
+                document.getElementById("Constant").innerHTML = getArray[0];
+                document.getElementById("outContent").innerHTML = getArray[0];
+                document.getElementById("inContent").innerHTML = getArray[1];
+                window.setInterval(function() {everyChange(i)},1000);
+            }
+
+        </script>
     </body>
 </html>

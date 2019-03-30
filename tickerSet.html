@@ -24,10 +24,12 @@
         tickerSet = function(){
             console.log("running");
             var area = document.getElementById("input");             
-            var lines = area.value.replace(/\r\n/g,"\n").split("\n");
-            console.log(lines);
+            var linesArray = area.value.replace(/\r\n/g,"\n").split("\n");
+            if( !window.localStorage) alert("Sorry, you're using an ancient browser");
+else {
+    localStorage.passArray = JSON.stringify(linesArray);
+}
         }
-
     </script>
     </body>
 </html>

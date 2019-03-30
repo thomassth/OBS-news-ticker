@@ -20,7 +20,17 @@ body{
 #tickerContent{
     padding: 5px 20px
 }
-#outContent{
+.tickerContentText{
+    height:40px
+}
+#inContent, #inContentNow{
+    margin-top:60px;
+    color:transparent;
+}
+#constant{
+    display: none;
+}
+#outContentNow{
     animation-name: fadeOut;
     animation-direction: normal;
     animation-delay: 0s;
@@ -29,10 +39,7 @@ body{
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
 }
-#inContent{
-    margin-top:60px;
-    color:transparent;
-}
+
 @keyframes fadeOut {
     0% {
       color:initial;
@@ -41,11 +48,11 @@ body{
   
     100% {
       color: transparent;
-      margin-top: -45px;
+      margin-top: -40px;
     }
 }
 
-#inContent{
+#inContentNow{
     animation-name: fadeIn;
     animation-direction: normal;
     animation-delay: 0s;
@@ -57,7 +64,7 @@ body{
 @keyframes fadeIn {
     0% {
       color:transparent;
-      margin-top:60px
+      margin-top:40px
     }
   
     100% {
