@@ -1,5 +1,6 @@
 # CR002
 Vertical ticker for OBS
+![demo](https://i.imgur.com/iOxAhMh.gif)
 
 ## Problem
 OBS have a word scrolling function but provides very little control
