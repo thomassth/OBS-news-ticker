@@ -1,35 +1,50 @@
 <html>
-    <head>
-        <title>Set the ticker!</title>
-        <link rel="stylesheet" href="styles.css">
 
-    </head>
-    <body>
-        <h1>One line = One ticker!</h1>
-        <div class="container1">
+<head>
+    <title>Set the ticker!</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body onload="loadMem()">
+    <h1>One line = One ticker!</h1>
+    <div class="container1">
         <textarea id="input"></textarea>
         <a onclick="tickerSet()">
             <div class="button">
-                Save Text to ticker
+                Save text to ticker
             </div>
         </a>
         <a href="ticker.html">
             <div class="button">
-                Ticker
+                Go to ticker
             </div>
         </a>
 
     </div>
     <script>
-        tickerSet = function(){
+        tickerSet = function () {
             console.log("running");
-            var area = document.getElementById("input");             
-            var linesArray = area.value.replace(/\r\n/g,"\n").split("\n");
-            if( !window.localStorage) alert("Sorry, you're using an ancient browser");
-else {
-    localStorage.passArray = JSON.stringify(linesArray);
-}
+            var area = document.getElementById("input");
+            var linesArray = area.value.replace(/\r\n/g, "\n").split("\n");
+            console.log(linesArray);
+            if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+            else {
+                localStorage.setItem("list", JSON.stringify(linesArray));
+                //localStorage.passArray = JSON.stringify(linesArray);
+                console.log(localStorage.getItem("list"));
+            }
+            return linesArray;
+        }
+        loadMem = function(){
+            var linesArray = localStorage.getItem("list");
+            var readingLines = JSON.parse(linesArray);
+            console.log(readingLines);
+        var area = document.getElementById("input");
+        area.value = readingLines.join("\n");
+            return linesArray;
         }
     </script>
-    </body>
+</body>
+
 </html>
