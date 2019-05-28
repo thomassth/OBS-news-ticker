@@ -13,4 +13,4 @@ Local HTML/CSS/JS emulating ticker
 
 ## ToDo
 - [ ] Horizontal scroll
-- [-] Change ticker content within OBS(browser) [here](https://thomassth.github.io/CR002/tickerSet.html).
+- [X] Change ticker content within OBS(browser) [here](https://thomassth.github.io/CR002/tickerSet.html).
