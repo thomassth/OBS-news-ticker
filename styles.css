@@ -24,3 +24,7 @@ a{
 h1{
     text-align: center
 }
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+ }
