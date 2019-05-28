@@ -13,4 +13,4 @@ Local HTML/CSS/JS emulating ticker
 
 ## ToDo
 - [ ] Horizontal scroll
-- [ ] Add new lines on web portal
+- [-] Change ticker content within OBS(browser) [here](https://thomassth.github.io/CR002/tickerSet.html).
