@@ -1,5 +1,8 @@
 var index = 1;
 function changeBanner() {
+    if(currentArray !== JSON.parse(localStorage.getItem("list"))){
+        loadLines();
+    }
     var list = document.getElementById('tickerContent').children;
     [].forEach.call(list, function (v, i) {
         ///Show the current item
@@ -14,6 +17,7 @@ function changeBanner() {
 }
 window.onload = function () {
     ///replace text
+    var currentArray = [];
     loadLines();
     console.log="Lines loaded";
     ///Begin display
@@ -31,6 +35,7 @@ window.onload = function () {
 loadLines = function () {
     var linesArray = localStorage.getItem("list");
     var readArray = JSON.parse(linesArray);
+    currentArray = readArray;
     var area = document.getElementById("tickerContent");
     area.innerHTML = "";
     for (var i = 0; i < readArray.length; i++) {
