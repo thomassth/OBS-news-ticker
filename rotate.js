@@ -18,8 +18,8 @@ function changeBanner() {
 window.onload = function () {
     ///replace text
     var currentArray = [];
-    loadLines();
-    console.log="Lines loaded";
+        loadLines();
+        console.log="Lines loaded";
     ///Begin display
     var list = document.getElementById('tickerContent').children;
     list[0].className = "showup";
@@ -36,11 +36,15 @@ loadLines = function () {
     var linesArray = localStorage.getItem("list");
     var readArray = JSON.parse(linesArray);
     currentArray = readArray;
+    if(linesArray==null){
+        readArray = ["ERROR: no lines saved.","Please change the lines in tickerSet."]
+    }
     var area = document.getElementById("tickerContent");
     area.innerHTML = "";
     for (var i = 0; i < readArray.length; i++) {
         area.innerHTML += "<p>" + readArray[i] + "</p>";
-    }
+    
+}
 }
 ///auto-reload
 /*window.setTimeout(function() {

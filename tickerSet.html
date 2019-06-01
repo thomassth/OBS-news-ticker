@@ -10,7 +10,7 @@
     <h1>One line = One ticker!</h1>
     <div class="container1">
         <textarea id="input"></textarea>
-        <a href="/"onclick="tickerSet()">
+        <a href="/" onclick="tickerSet()">
             <div class="button">
                 Save text to ticker
             </div>
@@ -26,24 +26,30 @@
         tickerSet = function () {
             console.log("Saving text...");
             var area = document.getElementById("input");
-            var linesArray = area.value.replace(/\r\n/g, "\n").split("\n");
-            console.log(linesArray);
-            if (!window.localStorage) alert("Sorry, you're using an ancient browser");
-            else {
-                localStorage.setItem("list", JSON.stringify(linesArray));
-                //localStorage.passArray = JSON.stringify(linesArray);
-                console.log(localStorage.getItem("list"));
+            if (area.value !== "") {
+                var linesArray = area.value.replace(/\r\n/g, "\n").split("\n");
+                console.log(linesArray);
+                if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+                else {
+                    localStorage.setItem("list", JSON.stringify(linesArray));
+                    //localStorage.passArray = JSON.stringify(linesArray);
+                    console.log(localStorage.getItem("list"));
+                }
+                //return linesArray;
+            } else {
+                localStorage.clear("list");
             }
-            //return linesArray;
             console.log("Done");
         }
-        loadMem = function(){
+        loadMem = function () {
             var linesArray = localStorage.getItem("list");
             var readingLines = JSON.parse(linesArray);
-            console.log(readingLines);
-        var area = document.getElementById("input");
-        area.value = readingLines.join("\n");
-            return linesArray;
+            if (readingLines !== null) {
+                console.log(readingLines);
+                var area = document.getElementById("input");
+                area.value = readingLines.join("\n");
+                return linesArray;
+            }
         }
     </script>
 </body>
