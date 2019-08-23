@@ -1,4 +1,5 @@
 var index = 1;
+///Animate & change text
 function changeBanner() {
     if(currentArray !== JSON.parse(localStorage.getItem("list"))){
         loadLines();
@@ -16,7 +17,12 @@ function changeBanner() {
     index = (index + 1) % list.length;
 }
 window.onload = function () {
-    ///replace text
+    ///load title
+    var title = document.getElementById('tickerHeaderText').children;
+    title[0].className="showup";
+    var titleLoop = JSON.parse(localStorage.getItem("title"));
+    title[0].textContent=titleLoop;
+    ///load text
     var currentArray = [];
         loadLines();
         console.log="Lines loaded";
