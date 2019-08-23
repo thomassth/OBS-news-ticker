@@ -40,7 +40,15 @@
                     console.log(localStorage.getItem("title"));
                 }} 
                             else {
-                    localStorage.clear("title");
+                    //localStorage.clear("title");
+                        var titleArray = "Latest";
+                        console.log(titleArray);
+                        if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+                        else {
+                            localStorage.setItem("title", JSON.stringify(titleArray));
+                            //localStorage.passArray = JSON.stringify(titleArray);
+                            console.log(localStorage.getItem("title"));
+                        }
                 }
                 console.log("Done");
             //Main content
