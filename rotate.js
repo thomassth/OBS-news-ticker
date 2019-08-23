@@ -1,7 +1,7 @@
 var index = 1;
 ///Animate & change text
 function changeBanner() {
-    if(JSON.parse(localStorage.getItem("title")!== titleLoop){
+    if(JSON.parse(localStorage.getItem("title"))!== titleLoop){
         title[0].textContent=titleLoop;
         title[0].className="showup";
        
