@@ -70,6 +70,8 @@
         }
         //Load previous content at start
         loadMem = function () {
+            var title = document.getElementById("name");
+            title.value = localStorage.getItem("title");
             var linesArray = localStorage.getItem("list");
             var readingLines = JSON.parse(linesArray);
             if (readingLines !== null) {
