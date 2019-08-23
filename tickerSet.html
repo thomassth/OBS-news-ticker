@@ -7,6 +7,8 @@
 </head>
 
 <body onload="loadMem()">
+    <label for="name">Custom header</label>
+    <input type="text" id="name" name="name" requiredminlength="4" maxlength="8" size="10">
     <h1>One line = One ticker!</h1>
     <div class="container1">
         <textarea id="input"></textarea>
@@ -23,8 +25,25 @@
 
     </div>
     <script>
+        //when clicked
         tickerSet = function () {
             console.log("Saving text...");
+            //Short title
+            var title = document.getElementById("name");
+            if (title.value !== "") {
+                var titleArray = title.value;
+                console.log(titleArray);
+                if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+                else {
+                    localStorage.setItem("title", JSON.stringify(titleArray));
+                    //localStorage.passArray = JSON.stringify(titleArray);
+                    console.log(localStorage.getItem("title"));
+                }} 
+                            else {
+                    localStorage.clear("title");
+                }
+                console.log("Done");
+            //Main content
             var area = document.getElementById("input");
             if (area.value !== "") {
                 var linesArray = area.value.replace(/\r\n/g, "\n").split("\n");
@@ -41,6 +60,7 @@
             }
             console.log("Done");
         }
+        //Load previous content at start
         loadMem = function () {
             var linesArray = localStorage.getItem("list");
             var readingLines = JSON.parse(linesArray);
