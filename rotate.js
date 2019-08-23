@@ -48,6 +48,7 @@ window.onload = function () {
 };
 loadLines = function () {
     var linesArray = localStorage.getItem("list");
+    var titleLoop=[JSON.parse(localStorage.getItem("title"))];
     var readArray = JSON.parse(linesArray);
     currentArray = readArray;
     if(linesArray==null){
