@@ -71,7 +71,8 @@
         //Load previous content at start
         loadMem = function () {
             var title = document.getElementById("name");
-            title.value = localStorage.getItem("title");
+            var titleArray=[JSON.parse(localStorage.getItem("title"))]
+            title.value = titleArray[0];
             var linesArray = localStorage.getItem("list");
             var readingLines = JSON.parse(linesArray);
             if (readingLines !== null) {
