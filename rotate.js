@@ -2,6 +2,8 @@ var index = 1;
 ///Animate & change text
 function changeBanner() {
     if(JSON.parse(localStorage.getItem("title"))!== titleLoop){
+        var title = document.getElementById('tickerHeaderText').children;
+        titleLoop=[JSON.parse(localStorage.getItem("title"))]
         title[0].textContent=titleLoop;
         title[0].className="showup";
        
@@ -23,9 +25,10 @@ function changeBanner() {
 }
 window.onload = function () {
     ///load title
+    var titleLoop=[];
     var title = document.getElementById('tickerHeaderText').children;
     title[0].className="showup";
-    var titleLoop = JSON.parse(localStorage.getItem("title"));
+    titleLoop=[JSON.parse(localStorage.getItem("title"))];
     title[0].textContent=titleLoop;
     ///load text
     var currentArray = [];
