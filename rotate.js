@@ -50,7 +50,7 @@ loadLines = function () {
     var linesArray = localStorage.getItem("list");
     var readArray = JSON.parse(linesArray);
     currentArray = readArray;
-    if(linesArray==null){
+    if(linesArray===null){
         readArray = ["ERROR: no lines saved.","Please change the lines in tickerSet."]
     }
     var area = document.getElementById("tickerContent");
